@@ -1,0 +1,7 @@
+{
+  "name": "reply",
+  "private": true,
+  "dependencies": {
+    "sweetalert": "^2.1.0"
+  }
+}

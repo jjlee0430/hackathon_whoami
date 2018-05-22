@@ -1,0 +1,59 @@
+<style>
+    .comment {
+        color:white;
+    }
+
+</style>
+
+<br/><br/>
+<img src="/cong.png" class="center">
+<div class="font">
+<h2 style="color:white; font-size:230%"><%=@post.username%>님을 더 알게 되었어요!</h2>
+
+<br />
+<h6 style="color:white; font-size:230%">
+<%=@post.question1%> => <%=@post.answer1%><br>
+<%=@post.question2%> => <%=@post.answer2%><br>
+<%=@post.question3%> => <%=@post.answer3%><br>
+</h6>
+</div>
+<br />
+
+<div class="comment">
+    
+</div>
+
+<div class="font">
+<h2 style="color:white; font-size:230%"><%=@post.username%>님에게 소감을 남겨주세요!</h2>
+<h4 style="color:green; font-size:230%">소감 입력</h4>
+</div>
+<form action="/posts/finish/<%= @post.id%>/comments/create" method="post">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <div class="font">
+  <h6 style="color:white; font-size:180%">작성자 : <input type="string" name="comment_user"></h6>
+  <h6 style="color:white; font-size:180%">소감 : <input type="text" name="input_content"></h6>
+  </div>
+<div class="centermain">
+<button class="btn btn-success" type="submit" name="answer" value="correct" style="cursor:pointer;"> 남기기 </button>
+</div>
+
+</form>
+<br />
+
+<div class="font" style="font-size:230%">
+<div class="comment">
+<% @comments.each do |comment| %>
+    <%= comment.participant %> : <%= comment.content %>
+    <br /><br />
+<% end %>
+</div>
+</div>
+
+
+<form action="/" method="get">
+
+
+<center><div class="centermain">
+<button class="btn btn-success" type="submit" name="answer" value="correct" style="cursor:pointer;"> 처음으로 </button>
+</div>
+</center>

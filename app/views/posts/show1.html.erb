@@ -1,0 +1,29 @@
+<style>
+    .centermain {
+        text-align:center;
+    }
+    .comment {
+        color:white;
+    }
+</style>
+
+<br/><br/>
+<div class="font">
+<h1 style="color:white; font-size:350%" class="centermain"><%= @post.username %>님의 첫번째 퍼즐!</h1><br><br>
+<h3 style="color:white; font-size:700%" class="centermain"><%= @post.question1 %></h3><br /><br />
+<center><h3 style="color:white; font-size:300%" class="centermain">힌트 :<%= @post.hint1 %></h3></center><br /><br />
+
+</div>
+<div class="comment"></div>
+
+<form action="/posts/check1/<%= @post.id %>" method="get">
+
+<div class="font">
+<h6 style="color:white; font-size:200%" class="centermain">정답 : <input type="string" name="enter_answer1"></h6><br />
+</div>
+
+<div class="centermain">
+<button class="btn btn-success" type="submit" name="answer" value="correct" style="cursor:pointer;"> 제출 </button>
+</div>
+
+</form>

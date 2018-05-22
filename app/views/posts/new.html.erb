@@ -1,0 +1,44 @@
+<style>
+    h1 {
+        color:white;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+    height: 15%;
+    }
+</style>
+
+<h1 class="font" style="font-size:300%">새 GAME 만들기</h1>
+<form action="/posts/create" method="post" style="color:white" class="center">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    
+    <div class="font" style="font-size:120%">
+    닉네임 : <input type="text" name="input_username"><br /><br/>
+    
+
+    Q1 : <input type = "text" name="input_question1"><br />
+    A1 : <input type = "text" name="input_answer1"><br />
+    Hint 1 : <input type = "text" name="input_hint1"><br /><br />
+
+    Q2 : <input type = "text" name="input_question2"><br />
+    A2 : <input type = "text" name="input_answer2"><br />
+    Hint 2 : <input type = "text" name="input_hint2"><br /><br />
+
+    Q3 : <input type = "text" name="input_question3"><br />
+    A3 : <input type = "text" name="input_answer3"><br />
+    Hint 3 : <input type = "text" name="input_hint3"><br /><br />
+    </div>
+    <div action="/posts/index" method="get">
+        
+        <div class="centermain">
+<button class="btn btn-success" type="submit" name="answer" value="correct" style="cursor:pointer;"> 제출 </button>
+</div>
+    </div>
+
+
+</form>
